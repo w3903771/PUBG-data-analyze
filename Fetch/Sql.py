@@ -8,34 +8,42 @@
 
 # -*- 功能说明 -*-
 
-#
+# 对批量用户名进行数据存储
 
 # -*- 功能说明 -*-
 import pymysql as sql
 
-class MySQL_Connect:
-    def __init__(self):
-        self.write_jud = 1
 
-        # 加载数据库
-        # 创建服务器连接对象(服务端的IP)
+class DbConnect:
+    def __init__(self):
+
         self.con = sql.Connect(
             host="39.106.75.227",
             user="root",
             password="root",
-            database="sign_in",
+            database="pubg_data",
             port=3308,
             charset='utf8'
         )
 
-    # 读取数据库
-    def Sql_Read_All(self):
+    # 使用事务将list插入数据库 并对错误进行回滚操作
+    def userInsert(self, list):
         # 创建游标对象
         cursor = self.con.cursor()
+        try:
+            sql = "insert into 'userinfo' values "
+            for i in list:
+                sql += '(' + str(i) + '),'
+            sql[-1] = ';'
+            cursor.execute(sql)
+            cursor.commit()
+            cursor.close()
+            return 0
+        except Exception as e:
+            print(e)
+            self.con.rollback()
+            return 1
 
-        sql = 'SELECT class_id, class_name FROM `class_list`'
-        cursor.execute(sql)
-        result = cursor.fetchall()
-        cursor.close()
 
-        return result
+    def close(self):
+        self.con.close()
