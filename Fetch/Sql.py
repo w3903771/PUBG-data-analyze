@@ -17,6 +17,7 @@ import pymysql as sql
 class DbConnect:
     def __init__(self):
 
+        # 数据库连接
         self.con = sql.Connect(
             host="39.106.75.227",
             user="root",
@@ -31,19 +32,20 @@ class DbConnect:
         # 创建游标对象
         cursor = self.con.cursor()
         try:
-            sql = "insert into 'userinfo' values "
+            # 对多条sql语句进行合并
+            sql = "insert ignore into userinfo values "
             for i in list:
-                sql += '(' + str(i) + '),'
-            sql[-1] = ';'
+                sql += '(' + "'" + str(i) + "'" + '),'
+            sql = sql[:-1] + ';'
+            # print(sql)
             cursor.execute(sql)
-            cursor.commit()
+            self.con.commit()
             cursor.close()
             return 0
         except Exception as e:
             print(e)
             self.con.rollback()
             return 1
-
 
     def close(self):
         self.con.close()

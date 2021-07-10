@@ -4,8 +4,8 @@
 ![image](https://img.shields.io/github/repo-size/w3903771/PUBG-data-analyze?label=size)
 ![image](https://img.shields.io/badge/License-Apache--2.0-green)
 
-A project for PUBG data analyze with scraping in Python.
-
+A project for PUBG data analyze with scraping in Python.</br></br>
+This project is also being manually synchronized on [Gitee](https://gitee.com/light_of_heaven/PUBG-data-analyze)
 # Overview
 ***
 This project mainly analyzed data from 100,000 PUBG matches from 10,000 different players and promote a proposal about this game.
@@ -31,13 +31,17 @@ Project
 
 # Requirements
 ***
-Python 3.5+
-
+* Python 3.5+
+* pandas
+* numpy
+* pymysql
+* BeautifulSoup
+* selenium
 
 # Dev log
 ***
-* [2021.07.08 Create Git project, prepare framework]()  
-* [2021.07.09 Ready for scraping, select data needed from api]()
+* [2021.07.08 Create Git project, prepare framework](https://gitee.com/light_of_heaven/PUBG-data-analyze/blob/main/Doc/Dev%20log%207.8.docx)  
+* [2021.07.09 Ready for scraping, select data needed from api](https://gitee.com/light_of_heaven/PUBG-data-analyze/blob/main/Doc/Dev%20log%207.9.docx)
 * [2021.07.10]()
 * [2021.07.11]()
 * [2021.07.12]()
