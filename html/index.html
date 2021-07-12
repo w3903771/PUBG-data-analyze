@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>如何优雅的吃鸡</title>
+    <!-- 引入 echarts.js -->
+    <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../html/index.css">
+</head>
+
+<body>
+    <header style="position:  relative;background-color:black;background-size:100% 100%;height:6rem;width:100rem;z-index: 1;">
+        <h1>W E L C O M E  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp  P U B G </h1>
+    </header>
+
+    <p style="text-align: center; color: aliceblue; font-size: 40pt;margin-top: 2.5rem;">
+        今 天 你 吃 鸡 了 吗 ？ ？ ？
+    </p>
+
+    <div class="video-box" style="background-color: rgba(30,30,30);">
+        <video class="video" style="width: 65rem; height: 30rem;left: 15rem; margin-top: 2.5rem;" controls autoplay>
+            <source src="../html/video.mp4" type="video/mp4">
+        </video>
+        
+        <p style="color: white;font-size: 1.2rem;margin-top: 1rem;">《绝地求生》(PUBG) 是由韩国Krafton工作室开发的一款战术竞技型射击类沙盒游戏 。</p><br>
+        <p style="color: white;font-size: 1.2rem;">在该游戏中，玩家需要在游戏地图上收集各种资源，并在不断缩小的安全区域内对抗其他玩家，让自己生存到最后</p><br>
+        <p style="color: white;font-size: 1.2rem;">而我们将我们所统计而来的数十万条记录进行汇总给你一份吃鸡攻略</p>
+        <br>
+    </div>
+
+
+
+    <div style="position:  relative;">
+        <div class="biaoti1" >
+            <p>在沙漠里面的热门枪械是什么呢？</p>
+        </div>
+        <div class="celan1">
+            <div class="celan11">
+                <p style="font-size: 1.4rem;font-weight:bold;text-indent:2.8rem;margin-top: 4%;">吃鸡是一款十分看重武器的游戏，那么在不同地图下玩家们也会根据地图的特性和地图所特有的属性，选择不同的武器，那么能够得到大部分玩家认可的武器就是最主要的武器。</p>
+                <br>
+                <br>
+                <p style="font-size: 1.4rem;font-weight:bold;text-indent:2.8rem">我们收集了沙漠地区的十一万次击杀，得出了使用较为频繁的武器。从图中可以看出m762和HK14是玩家们最喜欢的步枪，得益于沙漠地图的空旷，狙击步枪如Kar98k与Awp等也位于武器击杀数前列。就此我们可以得出，沙漠地区可以准备一把步枪与一把狙击步枪做好与敌人进行中远距离的交战</p>    
+            </div>
+        </div>    
+        <div id="shamo" >
+        <script type="text/javascript">
+            // 基于准备好的dom，初始化echarts实例
+            var myChart = echarts.init(document.getElementById('shamo'));
+            var option;
+
+                option = {
+                    title: {
+                        text: '沙漠地图武器击杀',
+                        subtext: '数据量:114203',
+                        left: 'center', 
+                    },//图像名称和名称位置
+                    tooltip: {
+                        trigger: 'item'
+                    },//触发器
+                    legend: {
+                        orient: 'vertical',
+                        left: 'left',
+                    },//数据标签
+                    series: [
+                        {
+                            name: '武器击杀',
+                            type: 'pie',
+                            radius: ['30%',"60%"],
+                            data: [
+                                {value: 30076, name: 'BerylM762'},
+                                {value: 24338, name: 'HK416'},
+                                {value: 14877, name: 'AK47'},
+                                {value: 8118, name: 'mauler'},
+                                {value: 5572,name:"others"},
+                                {value: 4038, name: 'FNFal'},
+                                {value: 3893, name: 'SKS'},
+                                {value: 3684, name: 'SCAR-L'},
+                                {value: 3050, name: 'Mini14'},
+                                {value: 2841, name: 'M24'},
+                                {value: 2556, name: 'Kar98k'},
+                                {value: 2264, name: 'SmokeBomb'},
+                                {value: 2030, name: 'Grenade'},
+                                {value: 1381, name: 'M16A4'},
+                                {value: 1083, name: 'Vector'},
+                                {value: 1051, name: 'UMP'},
+                                {value: 936, name: 'Winchester'},
+                                {value: 865, name: 'Groza'},
+                                {value: 784, name: 'UZI'},
+                                {value: 766, name: 'DP12'},
+
+     
+                            ],//数据导入
+                            emphasis: {
+                                itemStyle: {
+                                    shadowBlur: 10,
+                                    shadowOffsetX: 0,
+                                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                                }
+                            }
+                        }
+                    ]
+                };
+
+                myChart.setOption(option);
+    </script>
+        </div>
+        <div class="biaoti2">
+            <p>在海岛里面的热门枪支又是什么呢？</p>
+        </div>
+        <div id="yulin">
+        <script type="text/javascript">
+            // 基于准备好的dom，初始化echarts实例
+            var myChart = echarts.init(document.getElementById('yulin'));
+            var option;
+
+                option = {
+                    title: {
+                        text: '海岛武器击杀',
+                        subtext:"数据量:145956",
+                        left: 'center'
+                    },//图像名称及位置
+                    tooltip: {
+                        trigger: 'item'
+                    },//触发器
+                    legend: {
+                        orient: 'vertical',
+                        left: 'left',
+                    },//数据标签
+                    series: [
+                        {
+                            name: '武器击杀',
+                            type: 'pie',
+                            radius: ['30%',"60%"],
+                            data: [
+                            {value:"35152",name:"BerylM762"},
+                            {value:"27955",name:"HK416"},
+                            {value:"18027",name:"AK47"},
+                            {value:"16037",name:"mauler"},
+                            {value:"5298",name:"SCAR-L"},
+                            {value:"5065",name:"FNFal"},
+                            {value:"4386",name:"SKS"},
+                            {value:"3449",name:"M24"},
+                            {value:"3213",name:"Mini14"},
+                            {value:"2730",name:"SmokeBomb"},
+                            {value:"2543",name:"Grenade"},
+                            {value:"1821",name:"Kar98k"},
+                            {value:"1748",name:"Winchester"},
+                            {value:"1690",name:"M16A4"},
+                            {value:"1590",name:"Vector"},
+                            {value:"1447",name:"UMP"},
+                            {value:"1379",name:"UZI"},
+                            {value:"1215",name:"DP12"},
+                            {value:"1094",name:"Groza"},
+                            {value:"10117",name:"others"},
+
+                            
+                            ],//数据导入
+                            emphasis: {
+                                itemStyle: {
+                                    shadowBlur: 10,
+                                    shadowOffsetX: 0,
+                                    shadowColor: 'rgba(0,0,0,0)'
+                                    
+                                }
+                            }
+                        }
+                    ]
+                };
+
+                myChart.setOption(option);
+    </script>
+        </div>
+        <div class="celan2">
+                <p style="font-size: 1.4rem;font-weight:bold;text-indent:2.8rem;margin-top: 5%;margin-left: 5%;margin-right: 5%;">海岛地图的击杀图位于左侧，我们选取了14万次击杀，对击杀情况进行分析，可以看出，海岛地区主要产生击杀的枪支都为步枪与冲锋枪，狙击步枪大多位于榜单后位，贡献击杀数较少</p>
+                <br>
+                <br>    
+                <p style="font-size: 1.4rem;font-weight:bold;text-indent:2.8rem;margin-left: 5%;margin-right: 5%;">正如地图击杀特点，海岛地图相对于沙漠地图的特色体现在海岛地图的地形较为丰富，山川，河流，桥面，海边，许多的树木林立在山上，居民居住区的紧密挨联说明了这不适合进行远距离交战。可以得出当我们进行海岛地图的游戏时，我们可以选择两把步枪与更多的投掷武器与敌人进行中小距离对战</p>    
+        </div>  
+        <div class="biaoti3">
+            <p>在海岛中我们应该选取哪里降落？</p>
+        </div>
+        <div class="celan3">
+            <p style="font-size: 1.4rem;font-weight:bold;text-indent:2.8rem;margin-top: 20%;margin-left: 5%;margin-right: 5%;">
+                为了弄清楚跳伞时往哪里跳时最合适的，我们对数据进行了筛选，选取了海岛存活时间不足180秒的玩家进行了热力图分析，得到了右图。
+            </p>
+            <br>
+            <br>
+            <p style="font-size: 1.4rem;font-weight:bold;text-indent:2.8rem;margin-left: 5%;margin-right: 5%;">
+                右图我们可以看出，对于海岛而言，俗称为Y城的地方是落地成盒的玩家们常出现的地方，水城和下城区也是想稳健吃鸡的玩家们需要避开的地方，尽管那里物资丰厚，但是竞争也会更加激烈。除非你是想享受开枪的快感，与人从开局对战到游戏的结束，不然我们更建议你去其他稍微偏僻的小镇进行物资寻找。
+            </p>
+        </div>
+        <div class="changshi" style="background:url(../html/hdrelitu.png);background-size: 100% 100%;">
+            
+        </div>
+        <div class="biaoti4">
+            <p>在沙漠中我们又应该选取哪里降落呢？</p>
+        </div>
+        <div class="celan4">
+            <p style="font-size: 1.4rem;font-weight:bold;text-indent:2.8rem;margin-top:13%;margin-left: 5%;margin-right: 5%;">图中越红的地方，就是开局3分钟死亡人数最多的地方。可以看到，Rozhok和学校附近、军事基地周围，由于物资丰富跳的人数众多，是开局死亡发生率最高的地方，再者是Bunkers和Crater附近、Georgopol和医院附近、Gun Range附近 。</p>
+            <br>
+            <br>    
+            <p style="font-size: 1.4rem;font-weight:bold;text-indent:2.8rem;margin-left: 5%;margin-right: 5%;">如果想提高存活率（想要练技术的除外），特别是新手，还是避开这些地方跳好一些。毕竟比起一落地还没找到枪，就被先找到枪的人干掉了，我还是更倾向于好好跟队友一起跳个安全一点的地儿，好好找枪，毒来了就开着小车慢悠悠地欣赏路上的风光。</p>
+        </div>
+        <div class="changshi2" style="background:url(../html/smrelitu.png);background-size: 100% 100%;">
+            
+        </div>
+        <div class="biaoti5">
+            <p>击杀数和你的吃鸡概率有什么关系呢？</p>
+        </div>
+        <div class="celan5">
+            <p style="font-size: 1.4rem;font-weight:bold;text-indent:2.8rem;margin-top:5%;margin-left: 5%;margin-right: 5%;">这是一张击杀人数与吃鸡概率的关系图，可以清楚看到，吃鸡的概率跟干掉的人数是呈正比关系的，想要获得30%以上的吃鸡概率需要最少干掉6个人，干掉10个人的吃鸡概率是50%，干掉15个人的吃鸡概率是75%。甚至出现了击杀了25人后却仍然没有吃鸡的情况</p>
+            <br>
+            <br>    
+            <p style="font-size: 1.4rem;font-weight:bold;text-indent:2.8rem;margin-left: 5%;margin-right: 5%;">因此，如果想要天天吃鸡，在一个地方躲着不出来是不可能的。多点练习多提高击杀技术才是上策啊，朋友~，最好还是每天开始比赛前，去训练营训练训练自己的技术，或者去娱乐模式看看今天的手感如何吧。</p>
+        </div>
+        <div id="kill">
+        <script type="text/javascript">
+            var chartDom = document.getElementById('kill');
+            var myChart = echarts.init(chartDom);
+            var option;
+
+            option = {
+                title: {
+                        text: '击杀数与吃鸡概率',
+                        subtext:"数据量:145956",
+                        left: 'center'
+                    },
+                xAxis: {
+                    type: 'category',
+                    data: ['0', '1', '2', '3', '4', '5', '6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','32','34','36','37']
+                },
+                yAxis: {
+                    type: 'value'
+                },
+                series: [{
+                    data: [0.017510,0.050315,0.097641,0.153372,0.203356,0.254363,0.318892,0.369691,0.407529,0.476923,0.509524,0.559441,0.558442,0.645161,0.425000,0.620690,0.666667,0.666667,1.000000,0.571429,0.666667,0.600000,0.166667,0.600000,0.666667,0.000000,0.833333,1.000000,1.000000,1.000000,0.500000,1.000000,1.000000,1.000000,1.000000,],
+                    type: 'bar'
+                }]
+            };
+
+            option && myChart.setOption(option);
+
+
+        </script>
+        </div>
+        <div class="biaoti6">
+            <p>我是应该单打独斗 还是应该和队友们在一起呢？</p>
+        </div>
+        <div class="celan6">
+            <p style="font-size: 1.4rem;font-weight:bold;text-indent:2.8rem;margin-top:10%;margin-left: 5%;margin-right: 5%;">有些人放荡不羁爱自由，比如说我，在经历了一次出门舔箱被猪队友打成筛子之后，总是愿意在四人模式下也自己单干。这种情况我们都称作自己是孤狼，那么问题来了？孤狼真的好吗？</p>
+            <br>
+            <br>    
+            <p style="font-size: 1.4rem;font-weight:bold;text-indent:2.8rem;margin-left: 5%;margin-right: 5%;">我们搜索了十万条玩家的助攻数据（如图）在忽略掉一些较小差距后可以看出，助攻数据和玩家的吃鸡概率大程度上是呈现正比例关系（毕竟助攻多，队伍杀的人也多嘛）所以当我们进行组队排位的时候还是多与队友呆在一块吧</p>
+        </div>
+        <div id="assists">
+            <script type="text/javascript">
+                var chartDom = document.getElementById('assists');
+                var myChart = echarts.init(chartDom);
+                var option;
+
+                option = {
+                    title:{
+                        text:'助攻数据和吃鸡关系',
+                        left:'center'
+                    },
+                    xAxis: {
+                        type: 'category',
+                        data: ['0', '1', '2', '3', '4', '5', '6','7','8','9','11','12']
+                    },
+                    yAxis: {
+                        type: 'value'
+                    },
+                    series: [{
+                        data: [0.26233, 0.091207, 0.187438, 0.299882, 0.408392, 0.434615,0.531250,0.650000,0.666667,0.571429,1.000000,1.000000],
+                        type: 'line',
+                        smooth: true
+                    }]
+                };
+
+                option && myChart.setOption(option);
+            </script>
+        </div>
+
+
+        </div>
+    </div>
+
+    <footer style="position: relative;background-color:black;height:50px;width:100rem;z-index: 1;">
+        <h1>&copy;本 网 站 属 于 学 啥 都 不 会 小 组</h1>
+    </footer>
+    
+</body>
+
+
+
+</html>

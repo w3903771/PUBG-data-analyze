@@ -11,21 +11,33 @@
 # 对批量用户名进行数据存储
 
 # -*- 功能说明 -*-
+import os
+import sys
+import configparser
 import pymysql as sql
 
 
 class DbConnect:
     def __init__(self):
 
+        if getattr(sys, 'frozen', False):
+            Path = os.path.dirname(sys.executable)
+        elif __file__:
+            Path = os.path.dirname(os.path.abspath(__file__))
+        Path = os.path.dirname(Path)
+
+        cf = configparser.ConfigParser()
+        cf.read(os.path.join(Path, "config.ini"))
+
+        host = cf.get("mysql1", "host")
+        user = cf.get("mysql1", "user")
+        password = cf.get("mysql1", "password")
+        database = cf.get("mysql1", "database")
+        port = cf.getint("mysql1", "port")
+        charset = cf.get("mysql1", "charset")
+
         # 数据库连接
-        self.con = sql.Connect(
-            host="39.106.75.227",
-            user="root",
-            password="root",
-            database="pubg_data",
-            port=3308,
-            charset='utf8'
-        )
+        self.con = sql.Connect(host=host, user=user, password=password, database=database, port=port, charset=charset)
 
     # 使用事务将list插入数据库 并对错误进行回滚操作
     def userInsert(self, list):

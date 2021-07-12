@@ -14,37 +14,43 @@ This project mainly analyzed data from 100,000 PUBG matches from 10,000 differen
 Project
 │   README.md
 │   LICENSE
+│   username.csv
 └───Fetch
-│   │   Selenium1.py
+│   │   Selenium.py
 │   │   Spider.py
 │   │   Sql.py
 │      
 └───API_getdata
-│   │   
-│   │   
-│   │   
+│   │   Get_data.py
+│   
 └───Doc
-│   │   
-│   │   
-│   │   
+│   │   Dev log 7.8.docx
+│   │   Dev log 7.9.docx
+│  
+└───Map
+│   │   erangel.jpg
+│   │   miramar.jpg
+│   
 ```
 
 # Requirements
 ***
 * Python 3.5+
+* PUBG Api  
 * pandas
 * numpy
 * pymysql
 * BeautifulSoup
 * selenium
+* Works on Windows  
 
 # Dev log
 ***
-* [2021.07.08 Create Git project, prepare framework](https://gitee.com/light_of_heaven/PUBG-data-analyze/blob/main/Doc/Dev%20log%207.8.docx)  
-* [2021.07.09 Ready for scraping, select data needed from api](https://gitee.com/light_of_heaven/PUBG-data-analyze/blob/main/Doc/Dev%20log%207.9.docx)
-* [2021.07.10]()
-* [2021.07.11]()
-* [2021.07.12]()
+* [2021.07.08](https://gitee.com/light_of_heaven/PUBG-data-analyze/blob/main/Doc/Dev%20log%207.8.docx) Create Git project, prepare framework
+* [2021.07.09](https://gitee.com/light_of_heaven/PUBG-data-analyze/blob/main/Doc/Dev%20log%207.9.docx) Ready for scraping, select data needed from api
+* [2021.07.10](https://gitee.com/light_of_heaven/PUBG-data-analyze/blob/main/Doc/Dev%20log%207.10.docx) Done for username scraping, arranging for match data
+* [2021.07.11](https://gitee.com/light_of_heaven/PUBG-data-analyze/blob/main/Doc/Dev%20log%207.11.docx) Start getting match data, design web site
+* [2021.07.12](https://gitee.com/light_of_heaven/PUBG-data-analyze/blob/main/Doc/Dev%20log%207.12.docx) Finally done!
 
 
 # Thanks

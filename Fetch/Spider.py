@@ -18,14 +18,30 @@ from Sql import DbConnect
 import os
 import sys
 import time
+import configparser
 import pandas as pd
 
 
 class Spider:
 
     # 初始化爬虫与数据列表 初始化数据库对象
-    def __init__(self, seed):
+    def __init__(self):
 
+        # 获取项目文件夹路径用于用户数据保存
+        if getattr(sys, 'frozen', False):
+            self.dirPath = os.path.dirname(sys.executable)
+        elif __file__:
+            self.dirPath = os.path.dirname(os.path.abspath(__file__))
+        self.dirPath = os.path.dirname(self.dirPath)
+
+        # 读取配置文件
+        cf = configparser.ConfigParser()
+        cf.read(os.path.join(self.dirPath, "config.ini"))
+
+        # 获取种子
+        seed = cf.get("spider", 'seed')
+
+        self.a=Selenium()
         # 待爬取用户队列
         self.userQueue = Queue(maxsize=300)
         self.userQueue.put(seed)
@@ -40,17 +56,10 @@ class Spider:
         # 初始化数据库对象
         self.db = DbConnect()
 
-        # 获取项目文件夹路径用于用户数据保存
-        if getattr(sys, 'frozen', False):
-            self.savePath = os.path.dirname(sys.executable)
-        elif __file__:
-            self.savePath = os.path.dirname(os.path.abspath(__file__))
-        self.savePath = os.path.dirname(self.savePath)
-        self.savePath = os.path.join(self.savePath, 'username.csv')
+        self.savePath = os.path.join(self.dirPath, 'username.csv')
 
-    # 设定爬取结构 共计爬取约1w次用户信息
+    # 设定爬取结构 共计爬取约1w用户信息
     def run(self):
-
         '''断点回溯
         with open(self.savePath, 'r', encoding="utf-8") as csvFile:  # 读取用户信息文件并存储在列表中
             reader = csv.reader(csvFile)
@@ -99,7 +108,8 @@ class Spider:
                     self.userList.append(i)
                     self.childList.append(i)
                     self.userCount += 1
-                    print('第二次拓展 当前进度 ' + str(id) + "/" + str(length) + '当前第' + str(self.userCount) + '人')
+                    print('第二次拓展 当前进度 ' + str(id) + "/" + str(length) +
+                          '当前第' + str(self.userCount) + '人')
             self.dataCleaning()
             self.save()
 
@@ -124,7 +134,5 @@ class Spider:
 
 
 if __name__ == "__main__":
-    # 设定种子用户名
-    seed = 'iiie-'
-    spider = Spider(seed)
+    spider = Spider()
     spider.run()
