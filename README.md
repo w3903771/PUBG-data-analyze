@@ -8,28 +8,47 @@ A project for PUBG data analyze with scraping in Python.</br></br>
 This project is also being manually synchronized on [Gitee](https://gitee.com/light_of_heaven/PUBG-data-analyze)
 # Overview
 ***
-This project mainly analyzed data from 100,000 PUBG matches from 10,000 different players and promote a proposal about this game.
+This project mainly analyzed data from more than 2,000 PUBG matches from 12,546 different players and gathered more than 22w information to promote a proposal about this game.
 
 ```
 Project
 │   README.md
 │   LICENSE
-│   username.csv
+│   username.csv                    用户名数据
+│   config.ini                      配置文件
+│   data.sql                        总数据
+│   requirement.txt                 依赖库
+│   代码规范.docx 
+│   
 └───Fetch
-│   │   Selenium.py
-│   │   Spider.py
-│   │   Sql.py
+│   │   Selenium.py                 基于selenium的单个网页爬取
+│   │   Spider.py                   爬取控制
+│   │   Sql.py           
 │      
 └───API_getdata
-│   │   Get_data.py
-│   
-└───Doc
+│   │   Get_data.py                 获取比赛数据
+│   │   Sql.py              
+│   │   xx.csv                      各种比赛数据csv文件
+│  
+└───Doc                             项目日志与技术文档
 │   │   Dev log 7.8.docx
 │   │   Dev log 7.9.docx
+│   │   Dev log 7.10.docx
+│   │   Dev log 7.11.docx
+│   │   Dev log 7.12.docx
+│   │   技术文档.md
 │  
-└───Map
+└───html
+│   │   hdrelitu.png                海岛热力图
+│   │   smrelitu.png                沙漠热力图
+│   │   index.html                  展示网页
+│   │   index.css
+│   │   video.mp4
+│   │   如何优雅地吃鸡.ipython       数据分析文件
+│   │ 
+    └───map
 │   │   erangel.jpg
-│   │   miramar.jpg
+│   │   miramar
 │   
 ```
 
@@ -41,8 +60,25 @@ Project
 * numpy
 * pymysql
 * BeautifulSoup
+* configparser
+* chicken_dinner 
 * selenium
 * Works on Windows  
+
+# Installation
+***
+To run this project, first download this file to your computer. You can get it by either Zip or using git command
+```
+git clone https://gitee.com/light_of_heaven/PUBG-data-analyze.git
+```
+Run commands below in cmd  to install the core dependencies.
+```bash
+pip install -r requirements.txt
+```
+Change config.ini to make sure your PUBG key and database is well configured。</br>
+
+You can apply for a PUBG key at [https://developer.pubg.com/](https://developer.pubg.com/)
+
 
 # Dev log
 ***
