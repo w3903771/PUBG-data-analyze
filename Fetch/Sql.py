@@ -29,12 +29,12 @@ class DbConnect:
         cf = configparser.ConfigParser()
         cf.read(os.path.join(Path, "config.ini"))
 
-        host = cf.get("mysql1", "host")
-        user = cf.get("mysql1", "user")
-        password = cf.get("mysql1", "password")
-        database = cf.get("mysql1", "database")
-        port = cf.getint("mysql1", "port")
-        charset = cf.get("mysql1", "charset")
+        host = cf.get("mysql", "host")
+        user = cf.get("mysql", "user")
+        password = cf.get("mysql", "password")
+        database = cf.get("mysql", "database")
+        port = cf.getint("mysql", "port")
+        charset = cf.get("mysql", "charset")
 
         # 数据库连接
         self.con = sql.Connect(host=host, user=user, password=password, database=database, port=port, charset=charset)

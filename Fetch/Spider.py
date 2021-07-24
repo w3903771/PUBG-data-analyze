@@ -39,12 +39,12 @@ class Spider:
         cf.read(os.path.join(self.dirPath, "config.ini"))
 
         # 获取种子
-        seed = cf.get("spider", 'seed')
+        self.seed = cf.get("spider", 'seed')
 
         self.a=Selenium()
         # 待爬取用户队列
         self.userQueue = Queue(maxsize=300)
-        self.userQueue.put(seed)
+        self.userQueue.put(self.seed)
         # 总爬取用户列表
         self.userList = []
         # 单次爬取用户列表
@@ -80,7 +80,7 @@ class Spider:
         self.childList = []
         for i in list:
             # 筛选非重复用户加入待查询队列与用户列表
-            if i not in self.userList and i != 'None' and i != seed:
+            if i not in self.userList and i != 'None' and i != self.seed:
                 self.userList.append(str(i))
                 self.childList.append(str(i))
                 self.userQueue.put(i)
@@ -90,7 +90,7 @@ class Spider:
         self.dataCleaning()
         self.save()
         time.sleep(1)
-
+        print('111')
         # 第二次扩展 从待爬取用户队列进行拓展
         length = self.userQueue.qsize()
         print(length)

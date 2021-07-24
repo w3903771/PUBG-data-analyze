@@ -202,8 +202,8 @@ def main():
             erangel_weapon = pd.Series(erangel_kills_total, index=erangel_weapon_name)
             miramar_weapon = pd.Series(miramar_kills_total, index=miramar_weapon_name)
             # 建立保存两个地图的图表位置
-            erangel_path = "D:\\爬虫\\erangel_weapon.csv"
-            miramar_path = "D:\\爬虫\\miramar_weapon.csv"
+            erangel_path = os.path.join(localPath, 'erangel_weapon_1.csv')
+            miramar_path = os.path.join(localPath, 'miramar_weapon_1.csv')
             # 建立两个地图的csv表
             df1 = pd.DataFrame({'Erangel (Remastered)': erangel_weapon})
             df2 = pd.DataFrame({'Miramar': miramar_weapon})
@@ -237,7 +237,7 @@ def main():
                 # 保存存活时间小于三分钟的存活时间
                 early_death_time.append(early_death[4])
             # 建立保存存活时间小于三分钟的玩家信息csv表路径
-            early_death_path = "D:\\爬虫\\early_death_detail.csv"
+            early_death_path = os.path.join(localPath, 'early_death_detail_1.csv')
             # 建立存活时间小于三分钟的玩家信息csv表
             df5 = pd.DataFrame({'Map': early_death_map, 'Name': early_death_name, "location_x": early_death_location_x,
                                 "location_y": early_death_location_y, "time_survive": early_death_time})
@@ -282,7 +282,7 @@ def main():
                 # 保存玩家最终信息的步行距离信息
                 finnal_player_walk_distance.append(finnal_player[7])
             # 建立保存玩家最终信息csv表的路径
-            finnal_player_detail_path = "D:\\爬虫\\finnal_player_detail.csv"
+            finnal_player_detail_path = os.path.join(localPath, 'finnal_player_detail_1.csv')
             # 建立保存玩家最终信息csv表
             df6 = pd.DataFrame({'Map': finnal_player_map, 'Name': finnal_player_name, 'win_place': finnal_player_win_place,
                                 'kills': finnal_player_kills, 'assists': finnal_player_assists,
