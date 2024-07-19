@@ -5,7 +5,7 @@
 ![image](https://img.shields.io/badge/License-Apache--2.0-green)
 
 A project for PUBG data analyze with scraping in Python.</br></br>
-This project is also being manually synchronized on [Github](https://github.com/w3903771/PUBG-data-analyze)
+This project is also being manually synchronized on [Gitee](https://gitee.com/light_of_heaven/PUBG-data-analyze)
 # Overview
 ***
 This project mainly analyzed data from more than 2,000 PUBG matches from 12,546 different players and gathered more than 22w information to promote a proposal about this game.
